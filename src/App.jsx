@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css'
+import { Registrar } from './Registro/Registrar';
+import { Consultar } from './ConsultaRegistro/Consultar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='contenido'>
+        <Router>
+          <Routes>
+            <Route path='/Registro' element={<Registrar />} />
+            <Route path='/ConsultaRegistro' element={<Consultar />} />
+            <Route path="*" element={<div className='cont-not-found'><h2>Error:404</h2><h2>página no encontrada</h2></div>} />
+          </Routes>
+        </Router>        
+      </div>
     </div>
   );
 }
