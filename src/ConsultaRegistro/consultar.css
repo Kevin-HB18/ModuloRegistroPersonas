@@ -1,0 +1,74 @@
+
+.contenedor-consultar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  }
+  
+  
+  h1 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0; /* Establece el margen superior e inferior para centrar el título verticalmente */
+  }
+  .table-container {
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+    overflow-x: auto;
+  }
+  
+  .table-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table th, table td {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  table th {
+    background: #007bff;
+    color: white;
+  }
+
+  .consult-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;    
+  }
+  
+  .consult-button:hover {
+    background: #0056b3;
+  }
+  
+  /* Estilos para pantallas más pequeñas (responsive) */
+  @media (max-width: 768px) {
+    .table-container {
+      margin: 10px auto;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  }

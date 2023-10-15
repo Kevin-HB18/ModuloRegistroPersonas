@@ -1,0 +1,46 @@
+/* Header.css */
+.header {
+    background: #007bff;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-family: 'Arial', sans-serif; /* Establece una fuente personalizada, ajusta según tus preferencias */
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  .nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Añade espacio entre los elementos de la lista, ajusta según tus preferencias */
+  }
+  
+  .list-item {
+    margin: 0;
+  }
+  
+  
+  .link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .link:hover {
+    color: rgb(28, 37, 75); /* Cambia el color a rojo al pasar el mouse sobre el enlace con la clase 'link' */
+  }
+  
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      text-align: center; /* Centra el texto verticalmente en dispositivos pequeños */
+    }
+  
+    .list-item {
+      margin: 5px 0;
+    }
+  }
+  
