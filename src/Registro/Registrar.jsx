@@ -59,7 +59,7 @@ export function Registrar() {
             newErrors.DIRECCION = 'La dirección no debe tener más de 30 caracteres.';
         }
         
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.CORREO)) {
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,50}$/.test(formData.CORREO)) {
             newErrors.CORREO = 'El correo no tiene un formato válido (ejemplo@ejemplo.com).';
         }
         
