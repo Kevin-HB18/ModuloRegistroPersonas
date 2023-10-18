@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useCallback} from "react";
 import './consultar.css';
-
+import axios from "axios";
 export function Consultar() {
 
-    const data = [
+  const [data, setData] = useState([
+    {
+      DESCTIPODOC: "",
+      NDOCUMENTO: "",
+      NOMBRE: "",
+      APELLIDO: "",
+      DIRECCION: "",
+      CORREO: "",
+      CELULAR: ""
+  }
+  ]);
+
+  
+    /*const data = [
     {
         tipoDocumento: 'DNI',
         numeroDocumento: '123456789012',
@@ -32,7 +45,7 @@ export function Consultar() {
         celular: '555-333-1111',
         },
         // Agrega más datos si es necesario
-      ];
+      ];*/
 
       useEffect(() => {
         const table = document.getElementById('excel-table');
@@ -45,9 +58,15 @@ export function Consultar() {
         });
       }, []);
     
-      const handleConsultClick = () => {
-        // Aquí puedes agregar la lógica para manejar la consulta
-        alert('Consulta realizada');
+      const handleConsultClick = async () => {
+        try {
+          const response = await axios.get("http://localhost:3001/api/obtenerDatos"); // Reemplaza '/api/obtenerDatos' con la URL de tu AP          
+              // Actualiza el estado 'datos' con los datos obtenidos
+          setData(response.data);
+          console.log(data)
+        } catch (error) {
+          console.error("Error al obtener los datos", error);
+        }
       };
 
       return (
@@ -72,13 +91,13 @@ export function Consultar() {
               <tbody>
                 {data.map((person, index) => (
                   <tr key={index}>
-                    <td>{person.tipoDocumento}</td>
-                    <td>{person.numeroDocumento}</td>
-                    <td>{person.nombre}</td>
-                    <td>{person.apellidos}</td>
-                    <td>{person.direccion}</td>
-                    <td>{person.correo}</td>
-                    <td>{person.celular}</td>
+                    <td>{person.DESCTIPODOC}</td>
+                    <td>{person.NDOCUMENTO}</td>
+                    <td>{person.NOMBRE}</td>
+                    <td>{person.APELLIDO}</td>
+                    <td>{person.DIRECCION}</td>
+                    <td>{person.CORREO}</td>
+                    <td>{person.CELULAR}</td>
                   </tr>
                 ))}
               </tbody>
